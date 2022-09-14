@@ -76,5 +76,3 @@ end
 
 #### file I/O
 
-
-#https://youtu.be/aKmN_i8Cy28
