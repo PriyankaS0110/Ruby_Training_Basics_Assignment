@@ -10,4 +10,6 @@
 #     puts index
 # end
 
-(1..100).each { |i| puts i }
+# (1..100).each { |i| puts i }
+
+100.times { |num| puts num + 1 }

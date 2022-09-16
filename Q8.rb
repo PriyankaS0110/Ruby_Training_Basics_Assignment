@@ -1,40 +1,26 @@
-#Write a program to transpose a N*N matrix.
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
 
-TwoDArr = Array.new(3){Array.new(3)}
-sum = 0;
-
-printf "Enter elements of MATRIX:\n";
-i = 0;
-while (i < 3) 
-  j = 0;
-  while (j < 3) 
-    printf "ELEMENT [%d][%d]: ", i, j;
-    TwoDArr[i][j] =  gets.chomp.to_i;
-    j = j + 1;
+def given_matrix(matrix)
+  for i in matrix
+      i.select{|x| print x.to_s.rjust(8," ")}
+      puts
   end
-  i = i + 1;
 end
 
-printf "MATRIX:\n";
-i = 0;
-while (i < 3)
-  j = 0;
-  while (j < 3) 
-    print TwoDArr[i][j]," ";
-    j = j + 1;
-  end
-  i = i + 1;
-  print "\n";
-end
+puts "Matrix: "
+given_matrix(matrix)
+puts "Transposed Matrix: "
 
-printf "Transpose of matrix:\n";
-i = 0;
-while (i < 3)
-  j = 0;
-  while (j < 3) 
-    print TwoDArr[j][i]," ";
-    j = j + 1;
+def transpose_matrix(matrix)
+  result = Array.new(matrix[0].length) {Array.new(matrix.length) {0}}
+  for i in 0..matrix.length - 1
+      for j in 0..matrix[0].length - 1
+          result[j][i] = matrix[i][j]
+      end
   end
-  i = i + 1;
-  print "\n";
+  return result
 end
+new_matrix = transpose_matrix(matrix)
+given_matrix(new_matrix)
